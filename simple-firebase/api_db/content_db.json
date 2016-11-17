@@ -1,0 +1,19 @@
+{
+  "clientes" : [
+    {
+      "nacionalidad" : "peruano",
+      "nombre" : "Maxi",
+      "sexo": "M"
+    },
+    {
+      "nacionalidad" : "boliviano",
+      "nombre" : "facundo",
+      "sexo" : "M"
+  } ],
+  "title" : "Hello World",
+  "users" :
+    {
+      "facumila" : "admin000",
+      "mariagritti" : "admin123"
+    }
+}

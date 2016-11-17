@@ -2,16 +2,11 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Admin panel</title>
-    <!--REACT-->
-    <!--<script src="https://unpkg.com/react@latest/dist/react.js"></script>-->
-    <!--<script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>-->
-    <!--<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>-->
-    <script src="js/login.js"></script>
+    <title>Simple Firebase</title>
+
     <!--Firebase-->
-    <!--<script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
     <script>
-    // Initialize Firebase
     var config = {
         apiKey: "AIzaSyDLxlsP9XGpnbwzQ2AbTfEG_IPq1fMrKYA",
         authDomain: "hello-world-614c2.firebaseapp.com",
@@ -21,52 +16,13 @@
     };
 
     firebase.initializeApp(config);
-
-    var title;
-    var clientes;
-
     var db = firebase.database();
 
-    var promiseTitle = db.ref('title').once('value', function (snapshot) {
-        return title = snapshot.val()
-    });
-
-    var promiseClientes = db.ref('clientes').once('value', function (snapshot) {
-        return clientes = snapshot.val()
-    });
-
-    db.ref('title').set(
-            'Hello World'
-    );
-
-    db.ref('clientes').set([
-        {
-            nombre: 'Maxi',
-            nacionalidad: 'peruano',
-            sexo: null
-        },
-        {
-            nombre: 'facundo',
-            nacionalidad: 'boliviano',
-            sexo: 'undefined'
-        }
-    ]);
-
-    </script>-->
-
+</script>
+<script src="js/login.js"></script>
 </head>
-
 <body>
-
-<h1>Control Panel</h1>
-<div id="login"></div>
-
-
-
-<!--<div id="mount">-->
-    <!--<h1><script>document.write(title)</script></h1>-->
-    <!--<p><script>document.write(clientes[1].nacionalidad)</script></p>-->
-<!--</div>-->
+  <div id="login"></div>
 
 </body>
 </html>
