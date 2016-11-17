@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Simple Firebase</title>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+
+</head>
+
+<body>
+
+<script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDLxlsP9XGpnbwzQ2AbTfEG_IPq1fMrKYA",
+        authDomain: "hello-world-614c2.firebaseapp.com",
+        databaseURL: "https://hello-world-614c2.firebaseio.com",
+        storageBucket: "hello-world-614c2.appspot.com",
+        messagingSenderId: "348530014620"
+    };
+
+    firebase.initializeApp(config);
+
+    var title;
+    var clientes;
+
+    var db = firebase.database();
+
+    var promiseTitle = db.ref('title').once('value', function (snapshot) {
+        return title = snapshot.val()
+    });
+
+    var promiseClientes = db.ref('clientes').once('value', function (snapshot) {
+        return clientes = snapshot.val()
+    });
+
+    db.ref('title').set(
+            'Hello World'
+    );
+
+    db.ref('clientes').set([
+        {
+            nombre: 'Maxi',
+            nacionalidad: 'peruano',
+            sexo: null
+        },
+        {
+            nombre: 'facundo',
+            nacionalidad: 'boliviano',
+            sexo: 'undefined'
+        }
+    ]);
+
+</script>
+
+<div id="mount">
+    <h1><script>document.write(title)</script></h1>
+    <p><script>document.write(clientes[1].nacionalidad)</script></p>
+</div>
+
+</body>
+</html>
